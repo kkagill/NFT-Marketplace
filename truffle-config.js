@@ -1,4 +1,4 @@
-const PrivateKeyConnector = require('connect-privkey-to-provider')
+const HDWalletProvider = require("truffle-hdwallet-provider-klaytn");
 const NETWORK_ID = '1001'
 const GASLIMIT = '20000000'
 const URL = `https://api.baobab.klaytn.net:8651`
@@ -13,7 +13,7 @@ module.exports = {
     },
 
     klaytn: {
-      provider: new PrivateKeyConnector(PRIVATE_KEY, URL),
+      provider: new HDWalletProvider(PRIVATE_KEY, URL),
       network_id: NETWORK_ID,
       gas: GASLIMIT,
       gasPrice: null,
